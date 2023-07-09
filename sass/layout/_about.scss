@@ -1,0 +1,28 @@
+@use "../mixin" as *;
+
+.about {
+  text-align: center;
+  @include breakpoints("sm") {
+    text-align: left;
+    @include grid(1fr, 2, 1.5em, null, center)
+    
+  }
+  
+  &__image {
+    margin-block: 5em;
+    position: relative;
+  }
+}
+
+.feactures {
+  text-align: center;
+  background-color: hsla(0, 0%, 100%, .1);
+  backdrop-filter: blur(16px);
+  width: 200px;
+  border-radius: 20px;
+  padding: 1em;
+  
+  &--about {
+    @include position(absolute, null, 0, 0, null);
+  }
+}

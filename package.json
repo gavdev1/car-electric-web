@@ -1,0 +1,11 @@
+{
+  "name": "car-website",
+  "version": "1.0.0",
+  "description": "Web de una carros electricos responsiva compatible con todos los dispositivos moviles, se usaron las tecnologías HTML & SASS & JS.",
+  "scripts": {
+    "sass": "sass -w sass/style.scss src/build/style.css"
+  },
+  "keywords": [],
+  "author": "Gabriel Acero",
+  "license": "ISC"
+}

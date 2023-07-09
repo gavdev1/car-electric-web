@@ -1,0 +1,18 @@
+@use "../mixin" as *;
+@use "../utilities/functions" as *;
+
+.popular{
+  @include grid(320px, 1, 1.5em, center);
+  @include breakpoints("sm") {
+    @include grid(1fr, 3);
+  }
+  
+  &__feactures {
+    @include flex(flex, null, wrap, 1em);
+    
+    &-item {
+      flex: 0 0 40%;
+      color: getColor("white");
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../mixin" as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  color: getColor("text-color");
+  font-size: 1em;
+  background-color: hsl(219, 4%, 4%);
+}
+
+h1, h2, h3 {
+  color: getColor;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: getColor("white");
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main{
+  margin-top: 10em;
+}
+
+section {
+  margin-top: 5em;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.center{
+  text-align: center;
+}
+
+.card{
+  background-color: getColor("container-color");
+  padding: 1em;
+  margin-block: 1em;
+  padding-block: 3em 7em;
+  position: relative;
+  @include flex(flex, column);
+  row-gap: 1em;
+  
+  &__image{
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  &__buy{
+    width: 10px;
+    font-size: 2em;
+    padding: .7em;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: getColor("white");
+    background-color: getColor("primary");
+    @include flex(flex, null, null, null, center, center);
+    @include position(absolute, null, 0, 0, null);
+  }
+}
+
+.container {
+  @include container(1100px, 0, 1em);
+}
+
+.title {
+  @include title("white", 2.5em, .4em);
+}
+
+.title--small{
+  @include title("white", 1.4em);
+}
+
+.btn-primary {
+  @include button(inline-block, 1em, 2em, "white", "primary");
+  box-shadow: getColor("primary") 0px 3px 8px;
+  margin-block: 2em;
+}
+
+.image {
+  @include image();
+}
+
+.text {
+  width: 75%;
+  margin: 1em auto;
+
+  @include breakpoints("sm") {
+    width: 100%;
+  }
+}

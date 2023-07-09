@@ -1,0 +1,73 @@
+@use "../mixin" as *;
+@use "../utilities/functions" as *;
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em;
+  box-shadow: rgba(50, 50, 40, 0.2) 0px 7px 29px 0px;
+  z-index: 10;
+  background-color: getColor("container-color");
+}
+
+.nav{
+  @include flex(flex, null, null, null, space-between, center);
+  margin: 0 auto;
+  
+  &__logo{
+    @include flex(flex, null, null, 1em, null, center);
+  }
+  
+  &__menu {
+    background-color: hsla(0, 100%, 0%, .1);
+    backdrop-filter: blur(7px);
+    width: 100%;
+    height: 100vh;
+    row-gap: 6em;
+    text-transform: uppercase;
+    font-weight: 600;
+    @include position(absolute, -10000%, null, null, 0);
+    @include flex(flex, column, null, 1.5em, center, center);
+    @include transiciones(1s, top);
+    @include breakpoints("sm") {
+      position: static;
+      width: unset;
+      height: unset;
+      @include flex(flex, row, null, 1.5em, null, null);
+    }
+    
+    
+    &-close{
+      font-size: 2em;
+      cursor: pointer;
+      color: getColor("white");
+      @include position(absolute, 1em, 1em);
+      @include breakpoints("sm") {
+        display: none;
+      }
+    }
+    
+    &-item{
+      @include transiciones(.8s, color);
+      
+      &:hover {
+        color: getColor("primary");
+      }
+    }
+  }
+  
+  &__bar {
+    font-size: 2em;
+    cursor: pointer;
+    @include breakpoints("sm") {
+      display: none;
+    }
+    
+  }
+}
+
+.menu-visible{
+  top: 0;
+}

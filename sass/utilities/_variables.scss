@@ -1,0 +1,26 @@
+//Colores
+$palette: (
+  "primary": hsl(219, 69%, 56%),
+  "primary-alt": hsl(219, 69%, 52%),
+  "title-color": hsl(219, 8%, 95%),
+  "text-color": hsl(219, 8%, 75%),
+  "container-color": hsl(219, 4%, 7%),
+  "dark": #000,
+  "white": #fff
+);
+
+//Font
+$font-primary: "Exo", sans-serif;
+
+$weight: 500, 600;
+
+//breakpoints media query
+$breakpoints: (
+  "2sm": 350px,
+  "sm": 768px,
+  "md": 1000px,
+  "lg": 1440px,
+  "xl": 2000px
+);
+
+$z-fixed: 10;

@@ -1,0 +1,77 @@
+@use "../mixin" as *;
+@use "../utilities/functions" as *;
+
+
+.home{
+   text-align: center;
+  @include flex(flex, column, null, 0, center, center);
+  
+  &__car{
+    margin-top: 1em;
+    @include resize(.8em);
+    @include flex(flex, null, null, 1em, null, center);
+    
+    &-icon{
+      color: getColor("primary");
+    }
+  }
+  
+  &__image {
+    margin-top: 3em;
+    @include image(400px, 70%)
+  }
+  
+  &__feactures{
+    width: 90%;
+    margin-top: 2em;
+    @include flex(flex, null, null, 1em);
+    
+    &-item{
+      @include flex(flex, column, null, 1em, center, center);
+      flex: 1;
+    }
+    
+    &-icon {
+      font-size: 1.5em;
+      height: 40px;
+      width: 40px;
+      padding: 1em;
+      border-radius: 50%;
+      background-color: getColor("container-color");
+      @include flex(flex, null, null, null, center, center);
+    }
+  }
+  
+  &__start {
+    @include flex(flex, null, null, null, center, center);
+    margin-top: 5em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    height: 100px;
+    width: 100px;
+    padding: 1em;
+    outline: 2px solid hsl(158, 98%, 43%);
+    border-radius: 50%;
+    
+    &::before{
+      content: "";
+      height: 70px;
+      width: 70px;
+      padding: 2em;
+      box-shadow:0 0 12px hsl(158, 98%, 43%);
+      border-radius: 50%;
+      animation: start-button .8s infinite;
+      position: absolute;
+    }
+  }
+}
+
+@keyframes start-button{
+  to{
+    box-shadow: 0 0 12px hsl(158, 98%, 43%);
+  }
+  
+  from{
+    box-shadow: 0 0 24px hsl(158, 98%, 43%);
+  }
+}

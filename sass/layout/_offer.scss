@@ -1,0 +1,24 @@
+@use "../mixin" as *;
+
+.offer{
+  text-align: center;
+  padding-block: 2em;
+  
+  @include breakpoints("sm") {
+    text-align: left;
+    @include grid(1fr, 2, 1.5em, null, center)
+  }
+  
+  &-container {
+    background-image: url("../assets/img/offer-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  &__image {
+    margin-block: 5em;
+    position: relative;
+  }
+}
